@@ -22,8 +22,7 @@ app.get('/get-info', async (req, res) => {
 
     try {
         // Fetch from YOUR Proxy
-        const response = await axios.get(${"https://numinfo-proxy-api.vercel.app';
-"}/?num=${phone});
+        const response = await axios.get(`${YOUR_PROXY_API_URL}/?num=${phone}`);
         res.json(response.data);
     } catch (error) {
         res.status(500).json({
@@ -40,6 +39,6 @@ module.exports = app;
 if (require.main === module) {
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
-        console.log(Server running on port ${PORT});
+        console.log(`Server running on port ${PORT}`);
     });
 }
