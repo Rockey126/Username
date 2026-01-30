@@ -3,7 +3,7 @@ const axios = require('axios');
 const app = express();
 
 // Your Proxy URL
-const YOUR_PROXY_API_URL = 'https://numinfo-proxy-api.vercel.app';
+const YOUR_PROXY_API_URL = 'https://username-brzb.vercel.app';
 
 // Root route (for home page)
 app.get('/', (req, res) => {
@@ -22,7 +22,7 @@ app.get('/get-info', async (req, res) => {
 
     try {
         // Fetch from YOUR Proxy
-        const response = await axios.get(`${YOUR_PROXY_API_URL}/?num=${phone}`);
+        const response = await axios.get(${YOUR_PROXY_API_URL}/?num=${phone});
         res.json(response.data);
     } catch (error) {
         res.status(500).json({
@@ -39,6 +39,6 @@ module.exports = app;
 if (require.main === module) {
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
+        console.log(Server running on port ${PORT});
     });
 }
